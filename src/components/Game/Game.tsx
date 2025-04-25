@@ -204,6 +204,7 @@ function Game () {
 
     return (
         <div className="game_screen">
+            <h1><b>TIC-TAC-שש-בש</b></h1>
             {/* TODO: When BOARD_SIDE_LENGTH is 2, the game_screen div changes size when I click a cell, but it works fine for BOARD_SIDE_LENGTH > 2 */}
             <div className="information-display-div">
                 <button onClick={() => setShowInformation(true)} > ? </button>
