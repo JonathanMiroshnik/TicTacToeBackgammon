@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Board from "../Board/Board";
 import Dice, { SIDES_TO_DICE } from "../Dice/Dice";
 import WinnerOverlay from "../WinnerOverlay/WinnerOverlay";
+import InformationOverlay from "../InformationOverlay/InformationOverlay";
 
 import './Game.css'
 
@@ -35,6 +36,7 @@ function Game () {
     const [currentPlayer, setCurrentPlayer] = useState<CellState>({ ...START_PLAYER });
     const [victor, setVictor] = useState(Symbols._);
     const [boardCells, setBoardCells] = useState<CellState[][]>(INITIAL_BOARD);
+    const [showInformation, setShowInformation] = useState(false);
 
     // Happens only once! creates board of certain sizes X and Y.
     useEffect(() => {
@@ -203,10 +205,13 @@ function Game () {
     return (
         <div className="game_screen">
             {/* TODO: When BOARD_SIDE_LENGTH is 2, the game_screen div changes size when I click a cell, but it works fine for BOARD_SIDE_LENGTH > 2 */}
-            
-            { victor !== Symbols._ && <WinnerOverlay winner={ Symbols[victor].toString() } onClose={ resetGame } /> }
+            <div className="information-display-div">
+                <button onClick={() => setShowInformation(true)} > ? </button>
+            </div>            
+            { showInformation &&  <InformationOverlay onClose={ () => setShowInformation(false) } />}
+            { victor !== Symbols._ && <WinnerOverlay winner={ Symbols[victor].toString() } onClose={ resetGame } /> }            
 
-            {/* TODO: find a way ti make the dice appear on the same row as current player status  */}
+            {/* TODO: find a way to make the dice appear on the same row as current player status  */}
             <div className="current_move">                
                 <Dice result={ currentPlayer.totalDice } />
                 <b className="current_player">

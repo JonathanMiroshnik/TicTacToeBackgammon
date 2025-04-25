@@ -4,6 +4,9 @@
     padding: 100px;
     border-style: dashed;
     border-color: aquamarine;
+    
+    align-items: center;
+    justify-content: center;
 }
 
 .current_move {
@@ -17,4 +20,16 @@
 
 .current_player_symbol {
     font-size: 100px;
+}
+
+.information-display-div {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information-display-div button {
+    height: 70px;
+    width: 70px;
 }
