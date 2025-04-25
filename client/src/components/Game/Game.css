@@ -1,0 +1,20 @@
+
+.game_screen {
+    border: 5px;
+    padding: 100px;
+    border-style: dashed;
+    border-color: aquamarine;
+}
+
+.current_move {
+    display: inline-block;
+}
+
+.current_player {
+    font-size: 50px;
+    display: inline-block;
+}
+
+.current_player_symbol {
+    font-size: 100px;
+}
