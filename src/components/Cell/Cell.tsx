@@ -1,5 +1,5 @@
 import { CellState, Symbols } from "../Game/Game";
-import CellCounter from "../CellCounter/CellCounter";
+// import CellCounter from "../CellCounter/CellCounter";
 import "./Cell.css"
 
 interface CellProps {
