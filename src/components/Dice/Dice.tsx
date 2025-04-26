@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { DiceOne, DiceTwo, DiceThree, DiceFour, DiceFive, DiceSix } from "phosphor-react";
-import "./Dice.module.css"
+import "./Dice.css"
 
 export const SIDES_TO_DICE: number = 6;
 const DICE_SIZE = 96;
@@ -43,9 +43,9 @@ function Dice ({ result }: DiceProps) {
     }
 
     return (
-        <div className="dice">
+        <>
             { numberToDiceImage(result, DICE_SIZE) }
-        </div> 
+        </>        
     );
 }
 

@@ -10,12 +10,14 @@
 }
 
 .current_move {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .current_player {
     font-size: 50px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .current_player_symbol {
@@ -23,7 +25,7 @@
 }
 
 .information-display-div {
-    margin: 20px;
+    /* margin: 20px; */
     display: flex;
     align-items: center;
     justify-content: center;

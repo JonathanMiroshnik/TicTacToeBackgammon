@@ -23,7 +23,7 @@ type VictoryStatus = {
     symbol: Symbols;
 }
 
-const BOARD_SIDE_LENGTH = 3;
+const BOARD_SIDE_LENGTH = 2;
 const START_PLAYER: CellState = { symbol: Symbols.X, totalDice: 0 };
 const INITIAL_BOARD = Array.from({ length: BOARD_SIDE_LENGTH }, () => 
     Array.from({ length: BOARD_SIDE_LENGTH }, () => ({ 
@@ -70,7 +70,7 @@ function Game () {
             initialSymbol = boardCells[i][0].symbol;
             for (let j = 0; j < BOARD_SIDE_LENGTH; j++) {
                 if (initialSymbol !== boardCells[i][j].symbol ||
-                    boardCells[i][j].totalDice < 6) {
+                    boardCells[i][j].totalDice < SIDES_TO_DICE) {
                     break;
                 }
 
@@ -149,15 +149,15 @@ function Game () {
         // TODO: check for input errors
 
         // If the cell is already filled completely, it cannot be changed
-        if (boardCells[row][col].totalDice === 6) {
+        if (boardCells[row][col].totalDice === SIDES_TO_DICE) {
             return;
         }
 
         // If the symbol of the cell is the same as the one that wants to add to it
         if (boardCells[row][col].symbol === newCellState.symbol) {
             let updatedTotalDice: number = boardCells[row][col].totalDice + newCellState.totalDice;
-            if (updatedTotalDice > 6) {
-                updatedTotalDice = 6;
+            if (updatedTotalDice > SIDES_TO_DICE) {
+                updatedTotalDice = SIDES_TO_DICE;
             }
 
             setSpecificBoardCell(row,col, { symbol: newCellState.symbol, totalDice: updatedTotalDice });
@@ -213,14 +213,14 @@ function Game () {
             { victor !== Symbols._ && <WinnerOverlay winner={ Symbols[victor].toString() } onClose={ resetGame } /> }            
 
             {/* TODO: find a way to make the dice appear on the same row as current player status  */}
-            <div className="current_move">                
-                <Dice result={ currentPlayer.totalDice } />
+            <div className="current_move">                                
                 <b className="current_player">
                     <b className="current_player_symbol">
                         { Symbols[currentPlayer.symbol].toString() }
                     </b>
-                    's Turn
+                    {/* 's Turn */}
                 </b>
+                <Dice result={ currentPlayer.totalDice } />
             </div>
 
             <Board boardState={ boardCells } onCellAction={(row, col) => onCellClick(row, col, currentPlayer)} />

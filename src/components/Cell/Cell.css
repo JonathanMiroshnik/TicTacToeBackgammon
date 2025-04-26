@@ -1,5 +1,5 @@
 .cell {
-   padding: 20px;
+   /* padding: 20px; */
 
    min-width: 100px;
    height: 100px;
@@ -7,12 +7,14 @@
    white-space: nowrap;
    overflow: hidden; */
 
-   flex-shrink: 0; /* don't shrink */
-   flex-grow: 0;   /* don't grow */
+   /* don't shrink */
+   /* flex-shrink: 0; */
+   /* don't grow */
+   /* flex-grow: 0; */
 
-   font-size:20px;
+   font-size: 20px;
 
-   vertical-align:middle;
+   vertical-align: middle;
 
    border: 2px;
    border-color: aqua;

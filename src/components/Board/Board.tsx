@@ -12,7 +12,7 @@ function Board({ boardState, onCellAction } : BoardProps) {
     return (
         <>
             { boardState.map((cellRow, row) => (
-                <div className="cell_row">
+                <div key={row} className="cell_row">
                     { cellRow.map((cell, col) => (
                         <Cell key={row.toString() + " " + col.toString()} cellState={cell} row={row} column={col} 
                         setCell={onCellAction} />
