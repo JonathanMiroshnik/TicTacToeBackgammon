@@ -23,7 +23,7 @@ type VictoryStatus = {
     symbol: Symbols;
 }
 
-const BOARD_SIDE_LENGTH = 2;
+const BOARD_SIDE_LENGTH = 3;
 const START_PLAYER: CellState = { symbol: Symbols.X, totalDice: 0 };
 const INITIAL_BOARD = Array.from({ length: BOARD_SIDE_LENGTH }, () => 
     Array.from({ length: BOARD_SIDE_LENGTH }, () => ({ 
