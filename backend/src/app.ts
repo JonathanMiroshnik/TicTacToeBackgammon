@@ -23,6 +23,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+// VERCEL INTEGRATION START -----------------------------------------------------------------------------
+import path from 'path';
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Handle requests by serving index.html for all routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
+// VERCEL INTEGRATION END -----------------------------------------------------------------------------
+
 // API Routes
 // app.use('/api/llm', llmRoutes);
 app.use('/api/intelligence', gameIntelligenceRoutes);
