@@ -9,7 +9,6 @@
     "dev": "nodemon src/index.ts",
     "prestart": "npm run build",
     "seed": "node data/seed-data.js",
-    "postinstall": "cd ../frontend && npm install && npm run build",
     "start": "node --no-warnings dist/index.js"
   },
   "keywords": [],
