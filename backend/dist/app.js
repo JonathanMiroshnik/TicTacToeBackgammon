@@ -22,6 +22,15 @@ app.use((0, helmet_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, morgan_1.default)('dev'));
+// // VERCEL INTEGRATION START -----------------------------------------------------------------------------
+// import path from 'path';
+// // Serve the static files from the React app
+// app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// // Handle requests by serving index.html for all routes
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+// });
+// // VERCEL INTEGRATION END -----------------------------------------------------------------------------
 // API Routes
 // app.use('/api/llm', llmRoutes);
 app.use('/api/intelligence', gameIntelligenceRoutes_1.default);
