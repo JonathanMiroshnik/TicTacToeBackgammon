@@ -10,9 +10,11 @@ import gameIntelligenceRoutes from './routes/gameIntelligenceRoutes';
 // Initialize express application
 const app = express();
 
+
+// "http://localhost:5173", "https://tic-tac-toe-backgammon-client.vercel.app"
 // Middleware pipeline
 app.use(cors({
-  origin: ["http://localhost:5173", "https://tic-tac-toe-backgammon-client.vercel.app"],
+  origin: "*",
   credentials: true,
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
