@@ -20,7 +20,11 @@ const app = express();
 //   allowedHeaders: ['Content-Type', 'Authorization']
 // }));
 
-app.use(cors());
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 
 app.use(helmet());
 app.use(express.json());

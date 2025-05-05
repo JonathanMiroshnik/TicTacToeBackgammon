@@ -6,7 +6,7 @@ import { resolve } from 'path';
 config({ path: resolve(__dirname, '../.env') });
 
 // Configuration constants
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7001; // 5000
 
 // Server startup sequence
 const startServer = async () => {

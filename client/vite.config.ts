@@ -5,7 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // server: {
-  //   host: '0.0.0.0',
+    // host: '0.0.0.0',
+    // host: '2a00:a041:28a0:7b00::1001',
+    // host: '::',
+    // port: 5173
   //   allowedHosts: ["yonatan-h110m-s2v.local"]
   // },
 })

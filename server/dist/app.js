@@ -11,12 +11,16 @@ const gameIntelligenceRoutes_1 = __importDefault(require("./routes/gameIntellige
 // TODO: change express use to get set etc?
 // Initialize express application
 const app = (0, express_1.default)();
-// Middleware pipeline
+// // "http://localhost:5173", "https://tic-tac-toe-backgammon-client.vercel.app"
+// // Middleware pipeline
+// app.use(cors({
+//   origin: "*",
+//   credentials: true,
+//   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 app.use((0, cors_1.default)({
-    origin: "http://localhost:5173",
-    credentials: true,
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin: '*',
 }));
 app.use((0, helmet_1.default)());
 app.use(express_1.default.json());
