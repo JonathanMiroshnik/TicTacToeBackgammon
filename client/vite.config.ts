@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/tictac/', // TODO: remove added 5.5.25 for testing purposes
+  // base: '/tictac/', // TODO: remove added 5.5.25 for testing purposes
   plugins: [react()], //mkcert() - https compliance
   server: {
     host: '0.0.0.0',
