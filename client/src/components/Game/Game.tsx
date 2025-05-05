@@ -29,7 +29,7 @@ type VictoryStatus = {
     symbol: Symbols;
 }
 
-const SERVER_SIDE = "162.0.237.138:7001"; // "http://www.sensorcensor.xyz:7001"; // http://localhost:5000
+const SERVER_SIDE = "http://162.0.237.138:7001"; // "http://www.sensorcensor.xyz:7001"; // http://localhost:5000
 
 const aiSymbol: Symbols = Symbols.O;
 const BOARD_SIDE_LENGTH = 3;
