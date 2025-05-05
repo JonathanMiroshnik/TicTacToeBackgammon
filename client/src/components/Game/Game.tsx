@@ -29,6 +29,8 @@ type VictoryStatus = {
     symbol: Symbols;
 }
 
+const SERVER_SIDE = "https://tic-tac-toe-backgammon-server.vercel.app"; // http://localhost:5000
+
 const aiSymbol: Symbols = Symbols.O;
 const BOARD_SIDE_LENGTH = 3;
 const START_PLAYER: CellState = { symbol: Symbols.O, totalDice: 0 };
@@ -217,7 +219,7 @@ function Game () {
     }    
 
     async function sentAIMoveRequest() {
-        const response = await fetch('http://localhost:5000/api/intelligence', {
+        const response = await fetch(SERVER_SIDE + '/api/intelligence', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
