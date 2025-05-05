@@ -11,14 +11,16 @@ import gameIntelligenceRoutes from './routes/gameIntelligenceRoutes';
 const app = express();
 
 
-// "http://localhost:5173", "https://tic-tac-toe-backgammon-client.vercel.app"
-// Middleware pipeline
-app.use(cors({
-  origin: "*",
-  credentials: true,
-  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// // "http://localhost:5173", "https://tic-tac-toe-backgammon-client.vercel.app"
+// // Middleware pipeline
+// app.use(cors({
+//   origin: "*",
+//   credentials: true,
+//   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
+app.use(cors());
 
 app.use(helmet());
 app.use(express.json());
