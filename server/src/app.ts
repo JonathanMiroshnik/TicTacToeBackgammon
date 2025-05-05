@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware pipeline
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://tic-tac-toe-backgammon-client-7g6arm5ow.vercel.app/"],
   credentials: true,
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
