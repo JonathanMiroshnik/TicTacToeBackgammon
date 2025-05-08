@@ -9,7 +9,7 @@ const path_1 = require("path");
 // Load environment variables
 (0, dotenv_1.config)({ path: (0, path_1.resolve)(__dirname, '../.env') });
 // Configuration constants
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7001; // 5000
 // Server startup sequence
 const startServer = async () => {
     try {
